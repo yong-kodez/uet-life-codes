@@ -6,7 +6,7 @@ int main() {
         printf("Nhap so nguyen duong N: ");
         scanf("%d",&n);
     } while (n <=0);
-    printf("Nhap day so (%d so): ", n);
+    printf("Nhap day so (%d so): ", n - 1);
     for (int i = 0; i<n-1; i++) {
         scanf("%d", &element);
         if (element > n) {
