@@ -41,9 +41,9 @@ int main() {
     }
 
     int new_len = removeDuplicates(arr,n);
-    printf("\nMang A sau khi loai bo trung lap: ");
+    printf("\nMang A sau khi loai bo trung lap (%d phan tu): ", n - new_len);
     for (int i = 0; i < new_len; i++) {
         printf("%d ",arr[i]);
-    }
+    } printf("\n");
     return 0;
 }
