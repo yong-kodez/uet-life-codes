@@ -16,6 +16,6 @@ int main() {
 
     for (m; m <= n; m++) {
         if (isPrime(m) == 1) printf(" %d", m);
-    }
+    } printf("\n");
     return 0;
 }
