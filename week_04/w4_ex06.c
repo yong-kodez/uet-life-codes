@@ -25,7 +25,7 @@ int main() {
     if (key_ptr == NULL) 
         printf("Khong tim thay gia tri %d\n", key);
     else
-        printf("Found %d at %p\nIndex: %d\n", key, key_ptr, key_ptr - ptr);
+        printf("Tim thay %d tai %p\nChi so: %ld\n", key, key_ptr, key_ptr - ptr);
     free(ptr);
     return 0;
 }
