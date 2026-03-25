@@ -20,15 +20,12 @@ int main() {
             scanf("%d", *(matrix + i) + j);
         }
     }
-    printf("\n---ROW SUMS---\n");
-    rowsums = (int*)malloc(row * sizeof(int));
+    printf("\n---SUMS---\n");
     for (i = 0; i < row; i++) {
-        *(rowsums + i) = sumRows(*(matrix + i), col);
-        printf("Sum row %d: %d\n", i + 1, *(rowsums + i));
+        printf("Sum row %d: %d\n", i + 1, sumRows(*(matrix + i), col));
     }
     for (i = 0; i < row; i++) 
         free(*(matrix + i));
     free(matrix);
-    free(rowsums);
     return 0;
 }

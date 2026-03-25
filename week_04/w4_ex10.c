@@ -7,7 +7,7 @@ int main() {
     scanf("%d", &n);
     arr = (int*)malloc(n*sizeof(int));
     if (arr == NULL) {
-        printf("MEMORY ERROR");
+        printf("MEMORY ERROR\n");
         return 1;
     }
     printf("Array elems: ");
@@ -17,6 +17,10 @@ int main() {
     printf("Add size: ");
     scanf("%d", &m);
     arr = (int*)realloc(arr, (m+n)*sizeof(int));
+    if (arr == NULL) {
+        printf("MEMORY ERROR\n");
+        return 1;
+    }
     printf("Add elems: ");
     for (i = 0; i < m; i++)
         scanf("%d", arr+n+i);
@@ -24,6 +28,7 @@ int main() {
     printf("New array:");
     for (i = 0; i < (m+n); i++) 
         printf(" %d", *(arr+i));
+    printf("\n");
     free(arr);
     return 0;
 }
