@@ -7,6 +7,7 @@ int main() {
         printf("Loi tao bo nho");
         return 1;
     }
+    printf("Nhap mot so nguyen: ");
     scanf("%d",ptr);
     printf("Gia tri da nhap: %d\n", *ptr);
     

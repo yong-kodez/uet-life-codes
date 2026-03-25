@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void processString(char *str, int *vowels, int *consonants) {
     for (str; *str != '\0'; str++) {
@@ -14,12 +13,16 @@ void processString(char *str, int *vowels, int *consonants) {
     }
 }
 void reverseString(char *str) {
-    int size = strlen(str);
-    for (int i = 0; i < (size)/2; i++) {
-        char temp = *(str + i);
-        *(str + i) = *(str + (size - 1 - i));
-        *(str + (size - 1 - i)) = temp;
-    } 
+    char *endptr = str;
+    while (*endptr != '\0') {
+        endptr++;
+    } endptr--;
+    while (endptr - str > 0) {
+        char temp = *str;
+        *str = *endptr;
+        *endptr = temp;
+        str++; endptr--;
+    }
 }
 int main() {
     char *str = NULL;

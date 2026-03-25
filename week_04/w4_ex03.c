@@ -10,6 +10,6 @@ int main() {
     printf("Gia tri con tro tro toi: %d\n", *ptr);
 
     *ptr = 200;
-    printf("Gia tri sau thay doi: %d", number);
+    printf("Gia tri sau thay doi: %d\n", number);
     return 0;
 }
