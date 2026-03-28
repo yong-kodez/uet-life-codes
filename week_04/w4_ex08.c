@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void processString(char *str, int *vowels, int *consonants) {
     for (str; *str != '\0'; str++) {
@@ -14,7 +13,7 @@ void processString(char *str, int *vowels, int *consonants) {
 }
 void reverseString(char *str) {
     char *endptr = str;
-    while (*endptr != '\0') {
+    while (*endptr != '\n') {
         endptr++;
     } endptr--;
     while (endptr - str > 0) {
@@ -25,10 +24,10 @@ void reverseString(char *str) {
     }
 }
 int main() {
-    char *str = NULL;
+    char str[100];
     printf("Enter a string: ");
-    scanf("%m[^\n]s", &str);
-    
+    fgets(str, sizeof(str), stdin);
+
     int vowels = 0, consonants = 0;
     processString(str, &vowels, &consonants);
     printf("Vowels: %d, Cons: %d\n", vowels, consonants);
@@ -36,6 +35,5 @@ int main() {
     reverseString(str);
     printf("Rev: %s\n", str);
 
-    free(str);
     return 0;
 }
