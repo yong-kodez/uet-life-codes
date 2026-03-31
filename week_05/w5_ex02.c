@@ -57,11 +57,13 @@ int main() {
 // Hàm nhập thông tin sinh viên
 void getStudents(Student *class, int size) {
     for (int i = 0; i < size; i++) {
+        getchar();
         class[i].id = i + 1;
-        printf("Sinh vien id %d:\n", i+1);
-        printf("\tTen: ");
-        scanf(" %[^\n]s", class[i].name);
-        printf("\tTuoi: ");
+        printf("- Sinh vien id %d:\n", i+1);
+        printf("\t+ Ten: ");
+        fgets(class[i].name, sizeof(class[i].name), stdin);
+        *(class[i].name + strlen(class[i].name) - 1) = '\0';
+        printf("\t+ Tuoi: ");
         scanf("%d", &class[i].age);
         class[i].score = -1;
     }
