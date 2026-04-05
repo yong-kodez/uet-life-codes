@@ -38,7 +38,7 @@ int main() {
                 scanf("%d", &val);
                 removeNode(firstNode, val); break;
             case 0:
-                printf("*** Thoat chuong trinh...***\n"); 
+                printf("*** Thoat chuong trinh...***\n");
                 freeList(firstNode); return 0;
             default: printf("*** Lua chon khong hop le ***\n"); break;
         }
@@ -89,7 +89,7 @@ void removeNode(struct Node *list, int val) {
             struct Node *temp = list->next;
             list->next = (list->next)->next;
             free(temp);
-            printf(" + Xoa thanh cong gia tri %d (dau tien) !\n", val);
+            printf(" + Xoa thanh cong gia tri %d !\n", val);
             return;
         }
         list = list->next;

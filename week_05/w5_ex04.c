@@ -30,7 +30,7 @@ int main() {
         printf("3. Nhiet do trung binh\n");
         printf("4. Gia tri nhiet do lon nhat\n");
         printf("5. Dem so lan cam bien tung trang thai\n");
-        printf("6. Sap xep du lieu\n");
+        printf("6. Sap xep du lieu theo thoi gian\n");
         printf("0. Thoat chuong trinh\n");
         printf("--> Lua chon thao tac: ");
         scanf("%d", &cmd);

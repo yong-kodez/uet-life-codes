@@ -45,7 +45,7 @@ int main() {
             case 5: 
                 float avg = average(class, size);
                 if (avg < 0) printf("!!! Chua nhap diem cho lop\n");
-                else printf("-> Diem trung binh (cua cac ban da co diem) la: %.2f\n", avg);
+                else printf("\n-> Diem trung binh cua lop la: %.3f\n", avg);
                 break;
             case 0: printf("*** Thoat chuong trinh...***\n"); free(class); return 0;
             default: printf("*** Lua chon khong hop le ***\n"); break;

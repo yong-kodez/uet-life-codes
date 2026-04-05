@@ -6,14 +6,14 @@ typedef struct {
 } Account;
 void deposit(Account *acc, int amount) {
     acc -> balance += amount;
-    printf("Gui thanh cong %d\n", amount);
+    printf(" + Gui thanh cong %d\n", amount);
 }
 void withdraw(Account *acc, int amount) {
     if (acc -> balance < amount) 
-        printf("So du khong du!\n");
+        printf(" * So du khong du!\n");
     else {
         acc -> balance -= amount;
-        printf("Rut thanh cong %d\n", amount);
+        printf(" + Rut thanh cong %d\n", amount);
     }
 }
 int main() {
@@ -24,28 +24,31 @@ int main() {
     scanf("%d", &account.id);
     printf("Nhap so du ban dau gui vao: ");
     scanf("%d", &account.balance);
-    do {
+    while (1) {
         printf("\n=== BANK MANAGEMENT ===\n");
         printf("1. Gui tien (deposit)\n");
         printf("2. Rut tien (withdraw)\n");
         printf("3. In ra so tien cua tai khoan\n");
         printf("0. Thoat\n");
-        printf("Nhap lenh: ");
+        printf("-> Lua chon thao tac: ");
         scanf("%d", &cmd);
-        if (cmd == 1) {
-            printf("So tien gui vao: ");
-            scanf("%d", &amount);
-            deposit(&account, amount);
-        } else if (cmd == 2) {
-            printf("So tien can rut: ");
-            scanf("%d", &amount);
-            withdraw(&account, amount);
-        } else if(cmd == 3) {
-            printf("So tien trong tai khoan %d: %d\n", account.id, account.balance);
-        } else {
-            printf("Thoat chuong trinh...\n");
-            break;
+        switch (cmd) {
+            case 1:
+                printf(" - So tien gui vao: ");
+                scanf("%d", &amount);
+                deposit(&account, amount); break;
+            case 2:
+                printf(" - So tien can rut: ");
+                scanf("%d", &amount);
+                withdraw(&account, amount); break;
+            case 3:
+                printf("-> So tien trong tai khoan %d: %d\n", account.id, account.balance);
+                break;
+            case 0:
+                printf("*** Thoat chuong trinh...***\n");
+                return 0;
+            default: printf("*** Lua chon khong hop le ***\n"); break;
         }
-    } while (cmd != 0);
+    }
     return 0;
 }

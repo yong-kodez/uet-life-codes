@@ -19,13 +19,13 @@ int main() {
         switch (cmd) {
             case 1: 
                 printf("- Nhap gia tri nguyen: ");
-                scanf("%d", &pack);
+                scanf("%d", &pack.i);
                 printf("+ Gia tri da nhap: %d\n", pack.i);
                 break;
             case 2:
                 printf("- Nhap gia tri thuc: ");
-                scanf("%f", &pack);
-                printf("+ Gia tri da nhap: %f\n", pack.f);
+                scanf("%f", &pack.f);
+                printf("+ Gia tri da nhap: %.3f\n", pack.f);
                 break;
             case 0: printf("*** Thoat chuong trinh...***\n"); return 0;
             default: printf("*** Lua chon khong hop le ***\n"); break;
