@@ -36,6 +36,18 @@ int main() {
     printf("- Ten: %s\n", s1.name);
     printf("- Tuoi: %d\n", s1.age);
 
+    printf("--- So sanh shallow va deep copy\n");
+    int source, deep, *shallow;
+    printf("Nhap mot gia tri: ");
+    scanf("%d", &source);
+    shallow = &source;
+    deep = source;
+    source += 1;
+    printf(" - compare:\n");
+    printf(" + source: %d, addr: %p\n", source, &source);
+    printf(" + shallow copy: %d, addr: %p\n", *shallow, shallow);
+    printf(" + deep copy: %d, addr: %p\n", deep, &deep);
+
     free(s1.name);
     return 0;
 }
