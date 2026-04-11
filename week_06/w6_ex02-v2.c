@@ -10,7 +10,7 @@ int main() {
     dest = open("Ex2_File.txt", O_RDWR | O_TRUNC | O_CREAT, 0766);
     if (dest < 0) {
         perror("open");
-        exit(1);
+        return 1;
     }
     while (1) {
         printf("\n--- COMMAND MENU ---\n");
@@ -26,13 +26,13 @@ int main() {
                 if (readFromKeyboard(dest) < 0) {
                     perror("Cmd 1");
                     close(dest);
-                    exit(1);
+                    return 1;
                 } break;
             case 2:
                 if (readFromFile(dest) < 0) {
                     perror("Cmd 2");
                     close(dest);
-                    exit(1);
+                    return 1;
                 } break;
             case 0:
                 close(dest);
@@ -46,6 +46,7 @@ int main() {
 int readFromKeyboard(int dest) {
     char buf[100];
     ssize_t byteRead;
+    write(1, " - Enter contents: ", 19);
     while ((byteRead = read(0, buf, sizeof(buf))) > 0) {
         if (write(dest, buf, byteRead) < 0) {
             perror("write");

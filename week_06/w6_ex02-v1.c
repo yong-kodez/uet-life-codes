@@ -3,14 +3,15 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-int readFromKeyboard(int dest);
-int readFromFile(int dest);
+int readFromKeyboard(FILE *dest);
+int readFromFile(FILE *dest);
+
 int main() {
-    int cmd, dest;
-    dest = open("Ex2_File.txt", O_RDWR | O_TRUNC | O_CREAT, 0766);
-    if (dest < 0) {
+    int cmd;
+    FILE *dest = fopen("Ex2_File.txt", "w");
+    if (dest == NULL) {
         perror("open");
-        exit(1);
+        return 1;
     }
     while (1) {
         printf("\n--- COMMAND MENU ---\n");
@@ -25,17 +26,17 @@ int main() {
             case 1:
                 if (readFromKeyboard(dest) < 0) {
                     perror("Cmd 1");
-                    close(dest);
-                    exit(1);
+                    fclose(dest);
+                    return 1;
                 } break;
             case 2:
                 if (readFromFile(dest) < 0) {
                     perror("Cmd 2");
-                    close(dest);
-                    exit(1);
+                    fclose(dest);
+                    return 1;
                 } break;
             case 0:
-                close(dest);
+                fclose(dest);
                 printf(" *** Exiting program... ***\n");
                 return 0;
             default: printf(" *** Invalid command ***\n"); break;
@@ -43,37 +44,29 @@ int main() {
     }
     return 0;
 }
-int readFromKeyboard(int dest) {
-    char buf[100];
-    ssize_t byteRead;
-    while ((byteRead = read(0, buf, sizeof(buf))) > 0) {
-        if (write(dest, buf, byteRead) < 0) {
-            perror("write");
-            return -1;
-        } break;
-    }
-    printf(" * Write complete!\n");
-    return 0;
+int readFromKeyboard(FILE *dest) {
+    char str[100];
+    printf(" - Enter contents: ");
+    scanf("%s", str);
+
+    fprintf(dest, "%s", str);
+    printf(" * Write complete\n");
 }
-int readFromFile(int dest) {
+int readFromFile(FILE *dest) {
     char name[100], buf[100];
-    ssize_t byteRead;
-    int source;
     printf(" - Choose file to read: ");
     scanf("%s", name);
-    source = open(name, O_RDONLY);
-    if (source < 0) {
-        perror("open");
+
+    FILE *source = fopen(name, "r");
+    if (fscanf(source, "%s", buf) < 0) {
+        perror("read");
         return -1;
     }
-    while ((byteRead = read(source, buf, sizeof(buf))) > 0) {
-        if (write(dest, buf, byteRead) < 0) {
-            perror("write");
-            return -1;
-        }
+    if (fprintf(dest, "%s", buf) < 0) {
+        perror("write");
+        return -1;
     }
-    printf(" * Write complete!\n");
-    close(source);
-    return 0;
+    printf(" * Write complete\n");
+    fclose(source);
 }
 
