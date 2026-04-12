@@ -8,8 +8,7 @@ int main(int argc, char *argv[]) {
         printf(" * Need 3 arguments, have %d\n", argc);
         return 1;
     }
-    int dest;
-    dest = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0644);
+    int dest = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0644);
     if (dest < 0) {
         perror("open");
         return 1;
@@ -19,7 +18,10 @@ int main(int argc, char *argv[]) {
         perror("write");
         return 1;
     }
-    write(dest, "\n", 1);
+    if (write(dest, "\n", 1) < 0) {
+        perror("write");
+        return 1;
+    }
     close(dest);
     return 0;
 }
