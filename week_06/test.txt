@@ -1,4 +1,4 @@
-Day la mot chuoi, co abc
-dong nay khong co abc
-dong nay moi thuc su khong co,
-Day la dong abc cuoi cung
+This line have abc
+This not have abc
+Nothing here
+This is last abc line

@@ -5,7 +5,7 @@
 int main(int argc, char *argv[]) {
     if (argc != 3) {
         printf(" * Need 3 arguments, have %d\n", argc);
-        exit(1);
+        return 1;
     }
     FILE *fb = fopen(argv[2], "r");
     if (fb == NULL) {
@@ -20,4 +20,6 @@ int main(int argc, char *argv[]) {
         }
         lineNum +=1;
     }
+    fclose(fb);
+    return 0;
 }

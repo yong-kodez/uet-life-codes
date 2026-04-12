@@ -45,28 +45,30 @@ int main() {
     return 0;
 }
 int readFromKeyboard(FILE *dest) {
-    char str[100];
+    char buf[100];
     printf(" - Enter contents: ");
-    if (fread(str, sizeof(str), 1, stdin) < 0) {
+    if ((fgets(buf, sizeof(buf), stdin)) == NULL) {
         perror("read");
         return -1;
     }
-    fwrite(str, sizeof(str), 1, dest);
+    if (fputs(buf, dest) < 0) {
+        perror("write");
+        return -1;
+    }
     printf(" * Write complete\n");
 }
 int readFromFile(FILE *dest) {
     char name[100], buf[100];
+    char *conts;
     printf(" - Choose file to read: ");
     scanf("%s", name);
 
     FILE *source = fopen(name, "r");
-    if (fscanf(source, "%s", buf) < 0) {
-        perror("read");
-        return -1;
-    }
-    if (fprintf(dest, "%s", buf) < 0) {
-        perror("write");
-        return -1;
+    while ((conts = fgets(buf, sizeof(buf), source)) != NULL) {
+        if (fputs(buf, dest) < 0) {
+            perror("write");
+            return -1;
+        }
     }
     printf(" * Write complete\n");
     fclose(source);
