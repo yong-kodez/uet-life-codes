@@ -10,7 +10,7 @@ int main(int argc, char*argv[]) {
 
     struct dirent *files;
     while ((files = readdir(dirp)) != NULL) {
-        printf("%ld %s\n", files->d_ino, files->d_name);
+        printf("%s ", files->d_name);
     }
 
     if (closedir(dirp) < 0) {

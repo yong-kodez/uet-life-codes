@@ -27,7 +27,7 @@ void grepPrint(char fileName[], char word[]) {
         if (strstr(cont, word) != NULL) {
             wlineCount += 1;
             if (wlineCount == 1)
-                printf("%s (lines:", fileName);
+                printf("%s (lines: %d", fileName, lineNum);
             else
                 printf(" %d", lineNum);
         }
