@@ -26,7 +26,6 @@ int main() {
         dup2(fd[0], 0);
         close(fd[0]);
         execlp("wc", "wc", "-l", NULL);
-        char c;
 
         perror("wc");
         return 1;

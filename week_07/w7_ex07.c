@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/wait.h>
 #include <unistd.h>
 #include <dirent.h>
 #include <stdlib.h>
@@ -34,13 +35,11 @@ int main() {
         }
     } else {
         signal(SIGINT, sig_handler);
-        while (1) {
-            pause();
-        }
+        wait(NULL);
     }
 }
 void sig_handler(int sig) {
     kill(pid, SIGKILL);
     printf("\nProgram is terminated by user\n");
-    exit(1);
+    exit(0);
 }
