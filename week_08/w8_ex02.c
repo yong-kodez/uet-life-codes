@@ -1,19 +1,28 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <stdlib.h>
 
-void *calSum(void *arg);
-int sum;
+void *calSum(void *arg) {
+    int n = *(int*)arg;
+    int *sum = calloc(1, sizeof(int));
+    *sum = (n*(n+1))/2;
+    free(arg);
+    return (void*)sum;
+}
 
 int main() {
+    int *n = calloc(1, sizeof(int));
+    printf("Enter n: ");
+    scanf("%d", n);
+
     pthread_t t;
-    
-    int n;
-    scanf("%d", &n);
-    pthread_create(&t, NULL, calSum, NULL);
-    pthread_join(t, NULL);
-    printf("%d\n", sum);
+    pthread_create(&t, NULL, calSum, (void*)n);
+
+    void *sum = NULL;
+    pthread_join(t, &sum);
+
+    int rs = *(int*)sum;
+    printf("Sum: %d\n", rs);
+    free(sum);
     return 0;
-}
-void *calSum(void *arg) {
-    sum = ((n+1)*n)/2;
 }
