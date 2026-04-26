@@ -9,12 +9,11 @@ void *printNums(void *arg) {
 }
 
 int main() {
-    pthread_t t1;
-
     printf("Enter n: ");
     scanf("%d", &n);
 
-    pthread_create(&t1, NULL, printNums, &n);
+    pthread_t t1;
+    pthread_create(&t1, NULL, printNums, NULL);
     pthread_join(t1, NULL);
     printf("Main thread exiting\n");
     return 0;
