@@ -1,2 +1,3 @@
-# Bài tập môn Lập trình hệ thống theo từng tuần.
-Just it.
+## Bài tập về nhà UET
+- Lập trình hệ thống.
+- Lập trình nâng cao.
