@@ -4,7 +4,7 @@ public class Transaction {
     private String timestamp;
     public double false_amount = 888;
 
-    public static int time = 1;
+    private static int time = 1;
 
     public Transaction(String id, double amount) {
         this.transactionId = id;
