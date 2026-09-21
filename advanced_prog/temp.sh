@@ -8,5 +8,6 @@ for i in {01..10}; do
   bai_dir="$ROOT_DIR/$target_dir/Bai$i"
   mkdir -p "$bai_dir/src"
   cp "$RUN_TEMP" "$bai_dir/run.sh"
+  chmod +x "$bai_dir/run.sh"
 done
 
