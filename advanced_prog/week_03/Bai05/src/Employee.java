@@ -1,4 +1,4 @@
-public class Employee {
+public abstract class Employee {
     private String id;
     private String name;
     private String dob;
@@ -16,4 +16,6 @@ public class Employee {
     public void setId(String id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setDob(String dob) { this.dob = dob; } 
+
+    public abstract double calcSalary();
 }

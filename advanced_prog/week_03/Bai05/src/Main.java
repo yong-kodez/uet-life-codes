@@ -10,13 +10,8 @@ public class Main {
         double salary;
         System.out.println("ID\tNAME\tDOB\t\tSALARY");
         for (Employee e : es) {
-            if (e instanceof FullTimeEmployee)
-                salary = ((FullTimeEmployee)e).calcSalary();
-            else
-                salary = ((PartTimeEmployee)e).calcSalary();
-
             System.out.println(e.getId() + "\t" + e.getName() + "\t" +
-                               e.getDob() + "\t" + salary);
+                               e.getDob() + "\t" + e.calcSalary());
         }
     }
 }
