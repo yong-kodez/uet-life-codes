@@ -8,8 +8,8 @@ public class Main {
         System.out.println("* Employee e2:");
         detail(e2);
         
-        if (e2.getDob().setDate(2, 2, 2022)) {
-            System.out.println("\n-> Set e2's dob to 2/2/2022");
+        if (e1.getDob().setDate(2, 2, 2022)) {
+            System.out.println("\n-> Set e1's dob to 2/2/2022");
         } else System.out.println(" [!] Invalid date: ignore change");
 
         System.out.println("\n--------After----------");

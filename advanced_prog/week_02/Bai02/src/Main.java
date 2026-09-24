@@ -30,7 +30,7 @@ public class Main {
 
     public static void gpaHdl(Student s, boolean b) {
         String fmt = "* Setting GPA for " + s.getId() + "\n";
-        if (b) fmt += "  + Set success";
+        if (b) fmt += "  + Setting complete";
         else fmt += "  [!] Invalid value: must be in range [0.0;4.0], negate change";
         System.out.println(fmt);
     }

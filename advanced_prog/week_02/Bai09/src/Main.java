@@ -50,7 +50,7 @@ public class Main {
         printPrice("p1", p1);
         printPrice("p2", p2);
                 
-        Product.getTotal();
+        System.out.println("--> Total revenue: " + Product.getTotal());
     }
 
     public static void printPrice(String name, Product p) {

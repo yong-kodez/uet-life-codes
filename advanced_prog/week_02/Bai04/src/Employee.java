@@ -15,6 +15,7 @@ public class Employee {
     public Employee(Employee e) {
         this.name = e.name;
         this.dob = new MyDate(e.dob);
+        // this.dob = e.getDob();
     }
 
     public String getName() { return name; }

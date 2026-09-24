@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        FullTimeEmployee f = new FullTimeEmployee("01", "tony", "01/01/2000", 1, 2, 3);
-        PartTimeEmployee p = new PartTimeEmployee("01", "tony", "21/11/2222", 1, 2);        
+        FullTimeEmployee f = new FullTimeEmployee("01", "tony", "01/01/2000", 100, 20, 15);
+        PartTimeEmployee p = new PartTimeEmployee("02", "betty", "21/11/2222", 6, 10);        
         Employee[] es = {f, p};
         printAll(es);
     }

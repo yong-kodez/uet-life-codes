@@ -12,7 +12,7 @@ public class BankAccount {
     public BankAccount(String accountNumber, String ownerName, double balance) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
-        if (balance > 0) this.balance = balance;
+        if (balance >= 0) this.balance = balance;
         else {
             this.balance = 0;
             System.out.println("[WAR] Balance cannot be negative:  set default to 0");

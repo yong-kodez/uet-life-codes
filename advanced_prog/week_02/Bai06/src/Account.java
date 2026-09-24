@@ -13,9 +13,9 @@ public class Account {
     }
 
     public void addTransaction(Transaction t) {
-        Transaction[] his = copyNew(history, history.length + 1);
-        his[history.length] = t;
-        history = his;
+        Transaction[] newHis = copyNew(history, history.length + 1);
+        newHis[history.length] = t;
+        this.history = newHis;
     }
 
     public void printHistory() {
