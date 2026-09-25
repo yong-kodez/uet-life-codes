@@ -19,6 +19,7 @@ public class SmartLight {
         this.brightness = brightness;
     }
     public void setBrightness(String preset) {
+        // if ("MAX".equals(preset)) this.setBrightness(100);
         if (preset == "MAX") this.setBrightness(100);
         else if (preset == "MIN") this.setBrightness(10);
         else if (preset == "ECO") this.setBrightness(30);
