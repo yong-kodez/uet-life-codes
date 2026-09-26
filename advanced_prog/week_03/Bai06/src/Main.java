@@ -4,18 +4,18 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        
         System.out.print("Number in order: ");
         int n = sc.nextInt();
         Product[] order = new Product[n];
 
         for (int i = 0; i < n; i++) {
-            System.out.println("* Order " + (i+1));
+            System.out.println("* Product " + (i+1));
             System.out.print("  - Type: ");
             String type = sc.next();
 
             System.out.print("  - Name: ");
-            String name = sc.nextLine();
-            sc.next();
+            String name = sc.next();
 
             System.out.print("  - Price: ");
             double price = sc.nextDouble();
@@ -31,12 +31,11 @@ public class Main {
                 int day = sc.nextInt();
                 LocalDate exp = LocalDate.of(year, month, day);
                 order[i] = new Food(name, price, exp);
+            } else {
+                System.out.println("[!] Invalid type: skip product");
             }
         }                
         printOrder(order);
-        // for (Product p : order) {
-        //     System.out.println(p.getId() + " " + p.getName() + " " + p.getInitPrice());
-        // }
     }
 
     public static void printOrder(Product[] ps) {
@@ -45,11 +44,12 @@ public class Main {
         for (Product p : ps) {
             if (p instanceof Electronics) type = "Electronics";
             else if (p instanceof Food) type = "Food";
+            else type = "unknown";
 
             System.out.println(p.getName() + " - " + type +
                                " - " + p.getFinalPrice());
             total += p.getFinalPrice();
         }
-        System.out.println("--> " + total);
+        System.out.println("--> Total = " + total);
     }
 }
