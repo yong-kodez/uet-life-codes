@@ -9,6 +9,8 @@ public class Invoice implements IPayable {
         this.pricePerItem = ppi;
     }
 
+    public String getName() { return this.itemName; }
+
     public double getPaymentAmount() {
         return quantity * pricePerItem;
     }
