@@ -10,6 +10,7 @@ public abstract class Employee implements IWorkable {
     }
 
     public double getBaseSalary() { return this.baseSalary; }
+    public String getName() { return this.name; }
 
     public abstract double calculatePay();
 }
