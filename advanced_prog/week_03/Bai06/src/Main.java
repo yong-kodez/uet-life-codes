@@ -5,27 +5,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("Number in order: ");
+        System.out.print("Number products in order: ");
         int n = sc.nextInt();
         Product[] order = new Product[n];
+        System.out.println("(type/name/price/[warrantyFee]-[expiryDate])");
 
         for (int i = 0; i < n; i++) {
-            System.out.println("* Product " + (i+1));
-            System.out.print("  - Type: ");
+            System.out.print(" - Product " + (i+1) + ": ");
             String type = sc.next();
-
-            System.out.print("  - Name: ");
             String name = sc.next();
-
-            System.out.print("  - Price: ");
             double price = sc.nextDouble();
 
             if ("E".equals(type)) {
-                System.out.print("    + warranty fee: ");
                 double warranty = sc.nextDouble();
                 order[i] = new Electronics(name, price, warranty);
             } else if ("F".equals(type)) {
-                System.out.print("    + expiry date (y/m/d): ");
                 int year = sc.nextInt();
                 int month = sc.nextInt();
                 int day = sc.nextInt();
@@ -35,6 +29,7 @@ public class Main {
                 System.out.println("[!] Invalid type: skip product");
             }
         }                
+        System.out.println();
         printOrder(order);
     }
 

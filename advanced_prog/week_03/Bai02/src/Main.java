@@ -6,8 +6,6 @@ public class Main {
         zoo[2] = new Duck();
         zoo[3] = new Dog();
 
-        for (int i = 0; i < 4; i++) {
-            zoo[i].makeSound();
-        }
+        for (Animal a : zoo) a.makeSound();
     }
 }

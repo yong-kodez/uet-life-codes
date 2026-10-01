@@ -6,18 +6,17 @@ public class Main {
         System.out.print("Number of rooms: ");
         int n = sc.nextInt();
         Room[] rs = new Room[n];
+        System.out.println("(type/nights)");
 
         for (int i = 0; i < n; i++) {
-            System.out.println("* Room no " + (i+1));
-            System.out.print("  - Type: ");
+            System.out.print(" - Room no " + (i+1) + ": ");
             String type = sc.next();
-
-            System.out.print("  - Nights stay: ");
             int nights = sc.nextInt();
 
             if ("S".equals(type)) rs[i] = new Standard(nights);
             else if ("V".equals(type)) rs[i] = new Vip(nights);
         }
+        System.out.println();
         printRooms(rs);
     }
 

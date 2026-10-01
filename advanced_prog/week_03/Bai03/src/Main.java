@@ -4,5 +4,6 @@ public class Main {
         // AdvancedMath m = new AdvancedMath();
         System.out.println(m.sum(5, 5));
         // System.out.println(m.sum(5.5, 5.5));
+        // System.out.println(((AdvancedMath)m).sum(5.5, 5.5));
     }
 }

@@ -8,6 +8,7 @@ public class PartTimeStaff extends Staff {
         this.hourlyRate = rate;
     }
 
+    @Override
     public double getPaymentAmount() {
         return workingHours * hourlyRate;
     }

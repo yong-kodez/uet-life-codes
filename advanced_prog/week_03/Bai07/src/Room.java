@@ -1,5 +1,5 @@
 public abstract class Room {
-    private double price = 0;
+    private double price;
     private int nights;
 
     public Room(int nights) {

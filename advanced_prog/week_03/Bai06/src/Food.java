@@ -14,7 +14,8 @@ public class Food extends Product {
         boolean notExp = this.expiryDate.isAfter(today) || this.expiryDate.isEqual(today);
         boolean almostExp = later.isAfter(this.expiryDate);
 
-        if (notExp && almostExp) { return this.getInitPrice() * 0.8; }
+        if (!notExp) { return 0; }
+        else if (notExp && almostExp) { return this.getInitPrice() * 0.8; }
         return this.getInitPrice();
     }
 }

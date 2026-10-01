@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        Manager m = new Manager("tony");
+        Manager m = new Manager();
     }
 }

@@ -1,8 +1,7 @@
 public class Manager extends Employee {
     private String department;
 
-    public Manager(String name) {
-        super(name);
+    public Manager() {
         System.out.println("3. Manager is created");
     }
 }

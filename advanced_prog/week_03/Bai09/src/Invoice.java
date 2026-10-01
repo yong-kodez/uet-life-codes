@@ -11,6 +11,7 @@ public class Invoice implements IPayable {
 
     public String getName() { return this.itemName; }
 
+    @Override
     public double getPaymentAmount() {
         return quantity * pricePerItem;
     }

@@ -6,9 +6,10 @@ public class Main {
         System.out.print("Number of robots: ");
         int n = sc.nextInt();
         Robot[] rs = new Robot[n];
+        System.out.println("(type/id/modelName)");
 
         for (int i = 0; i < n; i++) {
-            System.out.print(" - Robot " + (i+1) + " (type/id/modelName): ");
+            System.out.print(" - Robot " + (i+1) + ": ");
             String type = sc.next();
             int id = sc.nextInt();
             String name = sc.next();
@@ -29,18 +30,9 @@ public class Main {
             }
             r.performMainTask();
 
-            if (r instanceof Flyable) {
-                Flyable fr = (Flyable) r;
-                fr.fly();
-            }
-            if (r instanceof Swimmable) {
-                Swimmable sr = (Swimmable) r;
-                sr.swim();
-            }
-            if (r instanceof GPS) {
-                GPS gr = (GPS) r;
-                gr.getCoordinates();
-            }
+            if (r instanceof Flyable) { ((Flyable)r).fly(); }
+            if (r instanceof Swimmable) { ((Swimmable)r).swim(); }
+            if (r instanceof GPS) { ((GPS)r).getCoordinates(); }
             System.out.println();
         }
     }

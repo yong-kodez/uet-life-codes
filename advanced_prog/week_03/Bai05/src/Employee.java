@@ -3,10 +3,9 @@ public abstract class Employee {
     private String name;
     private String dob;
 
-    public Employee(String id, String name, String dob) {
+    public Employee(String id, String name) {
         this.id = id;
         this.name = name;
-        this.dob = dob;
     }
 
     public String getId() { return this.id; }

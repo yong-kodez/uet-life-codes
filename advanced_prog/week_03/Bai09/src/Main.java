@@ -7,29 +7,27 @@ public class Main {
         System.out.print("Number need payout: ");
         int n = sc.nextInt();
         IPayable[] ips = new IPayable[n];
+        System.out.println("(type/[id][name][workingHours][hourlyRate]-[itemName][quantity][pricePerItem])");
 
         for (int i = 0; i < n; i++) {
-            System.out.println(" * Object " + (i+1));
-            System.out.print("  - Type (S/I): ");
+            System.out.print(" - Object " + (i+1) + ": ");
             String type = sc.next();
 
             if ("S".equals(type)) {
-                System.out.print("  - Properties (id/name/working hours/hourly rate): ");
                 String id = sc.next();
                 String name = sc.next();
                 int hours = sc.nextInt();
                 double rate = sc.nextDouble();
                 ips[i] = new PartTimeStaff(id, name, hours, rate);
             } else if ("I".equals(type)) {
-                System.out.print("  - Properties (item name/quantity/price per item): ");
                 String itemName = sc.next();
                 int quantity = sc.nextInt();
                 double ppi = sc.nextDouble();
                 ips[i] = new Invoice(itemName, quantity, ppi);
             }
         }
+        System.out.println();
         printAllPayment(ips);
-        
     }
 
     public static void printAllPayment(IPayable[] ips) {
@@ -51,6 +49,6 @@ public class Main {
             System.out.println(type + " " + name + " - Payment: "
                                + ip.getPaymentAmount());
         }
-        System.out.println("Total Payment = " + total);
+        System.out.println(" -> Total Payment = " + total);
     }
 }
