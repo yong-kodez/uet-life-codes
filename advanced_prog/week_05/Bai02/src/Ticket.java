@@ -1,0 +1,5 @@
+public class Ticket {
+    private String id;
+    private String content;
+    private int timestamp;
+}
