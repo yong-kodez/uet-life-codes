@@ -8,14 +8,40 @@ public class TreeMapLibrary implements Library {
     } 
 
     @Override
-    void addBook(Book b);
+    public boolean addBook(Book newBook) {
+        if (!store.containsKey(newBook.getId())) {
+            store.put(newBook.getId(), newBook);
+            return true;
+        }
+        return false;
+    }
 
     @Override
-    Book searchBook(String id);
+    public Book searchBook(String id) {
+        if (store.containsKey(id)) return store.get(id);
+        return null;
+    }
 
     @Override
-    void removeBook(Book b);
+    public Book removeBook(String id) {
+        return store.remove(id);
+        // if (this.searchBook(id) != null) {
+        //     store.remove(id);
+        //     return true;
+        // }
+        // return false;
+    }
 
     @Override
-    void printStore();
+    public void printStore() {
+        for (Book b : store.values()) {
+            System.out.println(b.getId() + " - " + b.getTitle() + " - "
+                               + b.getAuthor() + " - " + b.getYear());
+        }
+    }
+
+    @Override
+    public String getType() {
+        return "TreeMapLibrary";
+    }
 }

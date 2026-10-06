@@ -1,6 +1,7 @@
 public interface Library {
-    void addBook(Book b);
+    boolean addBook(Book b);
     Book searchBook(String id);
-    void removeBook(Book b);
+    Book removeBook(String id);
     void printStore();
+    String getType();
 }
