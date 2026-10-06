@@ -4,4 +4,5 @@ BUILD_DIR="$ROOT_DIR/build"
 # mkdir -p "$ROOT_DIR/build"
 mkdir -p "$BUILD_DIR"
 javac -d "$BUILD_DIR" "$SRC_DIR"/*.java
-java -cp "$BUILD_DIR" Main
+java -cp "$BUILD_DIR" WriteProgram
+java -cp "$BUILD_DIR" ReadProgram
