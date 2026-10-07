@@ -13,13 +13,14 @@ public class Handler {
             FileInputStream fis = new FileInputStream(src);
             ObjectInputStream ois = new ObjectInputStream(fis);
             return ois;
-        } catch (FileNotFoundExcpetion e) {
+        } catch (FileNotFoundException e) {
             System.err.println("[!] File not found");
             e.printStackTrace();
         } catch (IOException e) {
             System.err.println("[!] IO Exception");
             e.printStackTrace();
         }
+        return null;
     }
 
     public static ObjectOutputStream openWrite(String des) {
@@ -27,25 +28,54 @@ public class Handler {
             FileOutputStream fos = new FileOutputStream(des);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             return oos;
-        } catch (FileNotFoundExcpetion e) {
+        } catch (FileNotFoundException e) {
             System.err.println("[!] File not found");
             e.printStackTrace();
         } catch (IOException e) {
             System.err.println("[!] IO Exception");
             e.printStackTrace();
         }
+        return null;
     }
-      
-    public static void write(String des, Object o) {
+
+    public static Object readObject(String src) {
+        ObjectInputStream ois = null;
         try {
-            ObjectOutputStream oos = openWrite(des);
-            oos.writeObject(o);
-        } catch (ClassNotFoundExcpetion e) {
+            ois = openRead(src);
+            return ois.readObject();
+        } catch (ClassNotFoundException e) {
             System.err.println("[!] Class not found");
         } catch (IOException e) {
             System.err.println("[!] IO Exception");
             e.printStackTrace();
+        } finally {
+            if (ois != null) {
+                try { ois.close(); }
+                catch (IOException e) {
+                    System.err.println("[!] IO Exception");
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+      
+    public static void writeObject(Object o, String des) {
+        ObjectOutputStream oos = null;
+        try {
+            oos = openWrite(des);
+            oos.writeObject(o);
+        } catch (IOException e) {
+            System.err.println("[!] IO Exception");
+            e.printStackTrace();
+        } finally {
+            if (oos != null) {
+                try { oos.close(); }
+                catch (IOException e) {
+                    System.err.println("[!] IO Exception");
+                    e.printStackTrace();
+                }
+            }
         }
     }
-
 }

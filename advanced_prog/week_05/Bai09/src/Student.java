@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 public class Student implements Serializable {
     private String id;
     private String name;
@@ -8,4 +10,9 @@ public class Student implements Serializable {
         this.name = name;
         this.gpa = gpa;
     }    
+
+    @Override
+    public String toString() {
+        return "Student: " + id + " - " + name + " - " + gpa;
+    }
 }
