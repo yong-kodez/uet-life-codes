@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);        
+
         System.out.print("Number of device: ");
         int n = sc.nextInt();
         OnOffDevice[] hub = new OnOffDevice[n];
@@ -18,12 +19,15 @@ public class Main {
             else if ("S".equals(type)) hub[i] = new SmartSpeaker(id, name);
             else if ("C".equals(type)) hub[i] = new SmartCurtain(id, name);
         }
-        System.out.println("Turn off all devices");
+
+        System.out.println("Turn off all devices:");
         for (OnOffDevice d : hub) d.turnOff();
+
         System.out.println();
-        System.out.println("Setup Wifi");
+        System.out.println("Setup Wifi:");
         for (OnOffDevice d : hub) {
-            if (d instanceof WifiConnectable) ((WifiConnectable)d).setUpWifi();
+            if (d instanceof WifiConnectable)
+                ((WifiConnectable)d).setUpWifi();
         }
 
     }

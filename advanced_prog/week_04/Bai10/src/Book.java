@@ -10,4 +10,9 @@ public class Book extends MediaItem {
 
     public String getAuthor() { return this.author; }
     public int getPages() { return this.pages; }
+
+    @Override
+    public String detail() {
+        return super.detail() + this.getAuthor() + " - " + this.getPages();
+    }
 }

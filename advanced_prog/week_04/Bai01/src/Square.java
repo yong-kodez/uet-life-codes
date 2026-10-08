@@ -3,11 +3,13 @@ public class Square extends Shape {
         super(x, y);
     }
     
+    @Override
     public void draw() {
-        System.out.println("Drawing circle at (" + x + ", " + y + ")");
+        System.out.println("Drawing square at (" + x + ", " + y + ")");
     }
 
+    @Override
     public void erase() {
-        System.out.println("Erasing circle at (" + x + ", " + y + ")");
+        System.out.println("Erasing square at (" + x + ", " + y + ")");
     }
 }

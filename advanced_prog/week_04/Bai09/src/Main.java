@@ -26,6 +26,7 @@ public class Main {
         }
         System.out.println("* Food inventory");
         fStore.checkInventory();
+
         System.out.println();
         System.out.println("* Electronics inventory");
         eStore.checkInventory();

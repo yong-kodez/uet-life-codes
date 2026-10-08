@@ -10,22 +10,15 @@ public class LibrarySection<T extends MediaItem> {
     public void addItem(T doc) {
         this.items.add(doc);
     }
-    public void removeItem(T doc) {
-        this.items.remove(doc);
+    public void removeItem(String id) {
+        for (T item : items) {
+            if (id.equals(item.getId()))
+                this.items.remove(item); 
+        }
     }
     public void detail() {
-        String fmt = "";
         for (T item : items) {
-            fmt = "";
-            fmt += item.getName() + " - ";
-            if (item instanceof Book) {
-                Book b = (Book)item;
-                fmt += b.getAuthor() + " - " + b.getPages();
-            } else if (item instanceof Dvd) {
-                Dvd d = (Dvd)item;
-                fmt += d.getDirector() + " - " + d.getDuration();
-            }
-            System.out.println(fmt);
+            System.out.println(item.detail());
         }
     }
 }

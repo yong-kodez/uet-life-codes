@@ -9,4 +9,8 @@ public class MediaItem {
 
     public String getId() { return this.id; }
     public String getName() { return this.name; }
+
+    public String detail() {
+        return this.name + " - ";
+    }
 }

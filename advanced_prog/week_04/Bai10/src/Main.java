@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         System.out.print("Number of media items: ");
         int n = sc.nextInt();        
         LibrarySection<Book> bookSection = new LibrarySection<>();
@@ -27,10 +28,9 @@ public class Main {
         }
         System.out.println("Book Section: ");
         bookSection.detail();
-        // for (Book b : bookSection) b.detail();
+
         System.out.println();
         System.out.println("DVD Section: ");
         dvdSection.detail();
-        // for (Dvd d : dvdSection) d.detail();
     }
 }

@@ -10,4 +10,9 @@ public class Dvd extends MediaItem {
 
     public String getDirector() { return this.director; }
     public int getDuration() { return this.duration; }
+
+    @Override
+    public String detail() {
+        return super.detail() + this.getDirector() + " - " + this.getDuration();
+    }
 }

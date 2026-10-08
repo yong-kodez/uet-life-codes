@@ -9,7 +9,7 @@ public class Main {
         Operation<Double> sub = (a, b) -> a-b;
         Operation<Double> mul = (a, b) -> a*b;
         Operation<Double> div = (a, b) -> a/b;
-        
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Number of students: ");
         int n = sc.nextInt();

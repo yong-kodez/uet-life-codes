@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        // ArrayUtils<Integer> arr = new ArrayUtils<>();
         Integer[] a1 = {5, 1, 3, 2};
         String[] a2 = {"Java", "C++", "Zig", "Python"};
 
