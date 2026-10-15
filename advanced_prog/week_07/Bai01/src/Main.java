@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Thread thread1 = new Thread(new Task("Thread 1", (long)200));
-        Thread thread2 = new Thread(new Task("Thread 2", (long)1000));
+        Thread thread1 = new Thread(new Task("Thread 1", 200));
+        Thread thread2 = new Thread(new Task("Thread 2", 1000));
 
         thread1.start();
         thread2.start();
