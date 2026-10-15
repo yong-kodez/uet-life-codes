@@ -13,7 +13,6 @@ public class Main {
         queue.addCustomer(new Customer("TranThiB"));
         System.out.println("   >> Success");
         
-        // System.out.println(" + Handling customer A: ");
         Customer c1 = handleCustomer(queue);
         MessageHistory m1 = handleMessage(c1, sc);
 

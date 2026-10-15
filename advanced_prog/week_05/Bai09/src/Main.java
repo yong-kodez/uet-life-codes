@@ -41,13 +41,13 @@ public class Main {
                 oos.writeObject(s); 
             }
         } catch (IOException e) {
-            System.err.println("[!] I/O Exception");                
             e.printStackTrace();
         } finally {
-            try { oos.close(); }
-            catch (IOException e) {
-                System.err.println("[!] I/O Exception");
-                e.printStackTrace();
+            if (oos != null) {
+                try { oos.close(); }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -67,8 +67,14 @@ public class Main {
         } catch (ClassNotFoundException e) {
             System.err.println("[!] No class found");            
         } catch (IOException e) {
-            System.err.println("[!] I/O Exception");
             e.printStackTrace();
+        } finally {
+            if (ois != null) {
+                try { ois.close(); }
+                catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

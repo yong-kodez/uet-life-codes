@@ -1,5 +1,6 @@
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+
 import java.io.EOFException;
 import java.io.IOException;
 
@@ -24,7 +25,6 @@ public class ReadProgram {
         } catch (EOFException e) {
             System.out.println(" - Reached EOF");
         } catch (IOException e) {
-            System.out.println("[!] Source file not found");
             e.printStackTrace();
         } finally {
             if (fis != null) {

@@ -1,3 +1,0 @@
-This is some short texts
-Include new lines
-And some $peci@! characters!

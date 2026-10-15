@@ -25,11 +25,6 @@ public class HashMapLibrary implements Library {
     @Override
     public Book removeBook(String id) {
         return store.remove(id);
-        // if (this.searchBook(id) != null) {
-        //     store.remove(id);
-        //     return true;
-        // }
-        // return false;
     }
 
     @Override

@@ -6,7 +6,7 @@ import java.util.Collections;
 public class WordCounter {
     public String analyze(String text) {
         String buf = text;
-        String[] regs = {".", ",", "!", "\"", "\"", "(", ")",
+        String[] regs = {".", ",", "!", "\"", "'", "(", ")",
                        ":", "[", "]", "{", "}", "-", ";"};
         for (String reg : regs) {
             buf = buf.replace(reg, "");

@@ -44,7 +44,7 @@ public class Main {
                         if (t < 1) throw new InvalidConfigException("\'maxConnections\' must >= 1");
 
                         System.out.println(" - maxConnections = " + t);
-                    } else throw new InvalidConfigException("not a valid property");
+                    } else throw new InvalidConfigException("'" + k + "' not a valid config");
                 } catch (NumberFormatException e) {
                     throw new NumberFormatException();
                 }

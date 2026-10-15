@@ -1,9 +1,11 @@
 import java.util.Scanner;
-import java.util.InputMismatchException;
+
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
+
 import java.io.EOFException;
 import java.io.IOException;
+import java.util.InputMismatchException;
 
 public class WriteProgram {
     public static void main(String[] args) {
@@ -30,7 +32,6 @@ public class WriteProgram {
         } catch(InputMismatchException e) {
             System.out.println("[!] Input must be integers");
         } catch (IOException e) {
-            System.out.println("[!] Cannot create destination file");
             e.printStackTrace();
         } finally {
             if (fos != null) {

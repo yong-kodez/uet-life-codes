@@ -32,11 +32,6 @@ public class ArrayListLibrary implements Library {
         Book book = this.searchBook(id);
         if (store.remove(book)) return book;
         return null;
-        // if (book != null) {
-        //     store.remove(book);
-        //     return true;
-        // }
-        // return false;
     }
 
     @Override

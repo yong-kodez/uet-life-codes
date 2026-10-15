@@ -1,20 +1,27 @@
 import java.io.FileReader;
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         FileReader fr = null;
         BufferedReader br = null;
         FileWriter fw = null;
         PrintWriter pw = null;
         
-        String src = "data/short_01.txt";
-        String des = "data/output_01.txt";
+        System.out.print("src: ");
+        String src = sc.next();
+        System.out.print("des: ");
+        String des = sc.next();
+        
         String line = "";
         ArrayList<String> lines = new ArrayList<>();
 
@@ -27,13 +34,12 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("[!] Source file not found");
         } catch (IOException e) {
-            System.out.println("[!] I/O Error");
             e.printStackTrace();
         } finally {
             if (br != null)
                 try { br.close(); }
                 catch (IOException e) {
-                    System.out.println("[!] Cannot close destination file");
+                    e.printStackTrace();
                 }
         }
 
@@ -50,13 +56,12 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("[!] Cannot create destination file");
         } catch (IOException e) {
-            System.out.println("[!] I/O Error");
             e.printStackTrace();
         } finally {
             if (pw != null)
                 try { fw.close(); }
                 catch (IOException e) {
-                    System.out.println("[!] Cannot close destination file");
+                    e.printStackTrace();
                 }
         }
     } 

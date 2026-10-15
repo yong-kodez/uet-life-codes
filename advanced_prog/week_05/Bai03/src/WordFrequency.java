@@ -12,7 +12,7 @@ public class WordFrequency {
 
     public String normalize() {
         String buf = pg;
-        String[] regs = {".", ",", "!", "\"", "\"", "(", ")",
+        String[] regs = {".", ",", "!", "\"", "\'", "(", ")",
                        ":", "[", "]", "{", "}", "-", ";"};
         for (String reg : regs) {
             buf = buf.replace(reg, "");
@@ -58,7 +58,7 @@ public class WordFrequency {
 
     public int getMostFreq() {
         HashMap<String, Integer> freq = this.countFreq();
-        return Collections.max(freq.values());        
+        return Collections.max(freq.values());
     }
 
     public List<String> mostFreqWords() {
