@@ -1,6 +1,15 @@
 ROOT_DIR=$(pwd)
 SRC_DIR="$ROOT_DIR/src"
 BUILD_DIR="$ROOT_DIR/build"
-mkdir -p "$BUILD_DIR"
-javac -d "$BUILD_DIR" "$SRC_DIR"/*.java
-java -cp "$BUILD_DIR" Main
+BEFORE_BUILD="$BUILD_DIR/before"
+AFTER_BUILD="$BUILD_DIR/after"
+
+mkdir -p "$BEFORE_BUILD"
+mkdir -p "$AFTER_BUILD"
+
+javac -d "$BEFORE_BUILD" "$SRC_DIR"/MainBefore.java
+javac -d "$AFTER_BUILD" "$SRC_DIR"/MainAfter.java
+
+java -cp "$BEFORE_BUILD" MainBefore
+echo "-------------------------"
+java -cp "$AFTER_BUILD" MainAfter
