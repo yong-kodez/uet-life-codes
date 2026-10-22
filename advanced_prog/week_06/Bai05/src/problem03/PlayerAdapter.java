@@ -5,6 +5,5 @@ public class PlayerAdapter implements Player {
     public void play(String name) {
         old = new OldPlayer();
         old.playFile(name);
-        System.out.println("- Playing " + name);
     }
 }

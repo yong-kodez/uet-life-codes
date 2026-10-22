@@ -3,7 +3,7 @@ public class Main {
         NotificationApp emailApp = new EmailApp();
         NotificationApp smsApp = new SmsApp();
 
-        emailApp.notifyUser("Cancel class due to heavy rain");
+        emailApp.notifyUser("Class cancel due to heavy rain");
         smsApp.notifyUser("Advertise...");
     }
 }
