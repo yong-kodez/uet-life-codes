@@ -2,10 +2,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     
-    <!-- Phiên bản cấu trúc POM bắt buộc -->
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 1. LIÊN KẾT VỚI POM CHA (Kế thừa toàn bộ JUnit 5, cấu trúc src/ và test/) -->
+    <!-- LIÊN KẾT VỚI POM CHA (Kế thừa toàn bộ JUnit 5, cấu trúc src/ và test/) -->
     <parent>
         <groupId>junit</groupId>
         <artifactId>week_08</artifactId>
@@ -13,6 +12,6 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>Bai08</artifactId>
+    <artifactId>Bai09</artifactId>
 
 </project>

@@ -21,7 +21,6 @@
         <junit.version>5.10.2</junit.version>
     </properties>
 
-    <!-- Mọi module con (Bai01..06) sẽ tự động có thư viện JUnit 5 này -->
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -37,8 +36,8 @@
         <testSourceDirectory>test</testSourceDirectory>
         
         <!-- Nơi chứa file .class sau khi biên dịch của từng bài -->
-        <outputDirectory>build/class</outputDirectory>
-        <testOutputDirectory>build/test</testOutputDirectory>
+        <outputDirectory>target/class</outputDirectory>
+        <testOutputDirectory>target/test</testOutputDirectory>
 
         <plugins>
             <plugin>

@@ -4,4 +4,12 @@
 # build dir in java
 build/
 
+# target dir from Maven
+target/
+*.class
+
+# jdtls (if)
+.settings/
+.classpath
+.project
 
