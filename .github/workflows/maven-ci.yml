@@ -20,23 +20,31 @@ jobs:
       run:
         working-directory: ./advanced_prog/week_09/Bai03
 
+    strategy:
+      fail-fast: false # Nếu 1 OS bị lỗi, các OS còn lại vẫn tiếp tục chạy để kiểm tra
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup JDK 25
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '25'
-          distribution: 'termurin'
+          distribution: 'temurin'
           cache: maven
 
       - name: Run tests and packages
         run: mvn test package
 
       - name: Upload Build Artifact (.jar)
+        if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: my-ci-test
           path: advanced_prog/week_09/Bai03/target/*.jar
           if-no-files-found: error
+
+      
