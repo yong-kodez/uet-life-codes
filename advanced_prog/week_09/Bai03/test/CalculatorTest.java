@@ -15,6 +15,9 @@ public class CalculatorTest {
     void addTest() {
         assertEquals(10, Calculator.add(7, 3));
         assertEquals(0, Calculator.add(-3, 3));
+
+        // Lỗi ở đây
+        assertEquals(10, Calculator.add(2, 3));
     }
     
     @Test
