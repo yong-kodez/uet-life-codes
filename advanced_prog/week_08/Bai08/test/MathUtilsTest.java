@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import com.sun.source.tree.AssertTree;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.AfterAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
