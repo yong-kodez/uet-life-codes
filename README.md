@@ -4,6 +4,18 @@
 
 ## Test mermaid
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#2b3137',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#58a6ff',
+    'lineColor': '#58a6ff',
+    'secondaryColor': '#1f2428',
+    'tertiaryColor': '#161b22'
+  }
+}}%%
+
 classDiagram
     direction TB
 
