@@ -5,90 +5,37 @@
 ## Test mermaid
 ```mermaid
 classDiagram
+    direction TB
 
-class User {
-    String username
-    String displayName
-    String password
-    boolean active
-    String description
-    String avatarURL
-    String email
-    List<Item> itemsOwned
-    BigDecimal balance
-}
-class BidderProfile {
-    List<Auction> AuctionJoined
-}
-class SellerProfile {
-    List<Auction> AuctionStarted
-}
-class AdminProfile {
-    List<String> actionLog
-}
+    %% Định nghĩa Interface
+    class Repository~T~ {
+        <<Interface>>
+        +findById(Long id) T*
+        +save(T entity) boolean*
+    }
 
-User *-- BidderProfile
-User *-- SellerProfile
-User *-- AdminProfile
+    %% Định nghĩa Abstract Class
+    class Account {
+        <<Abstract>>
+        #Long id
+        #String username
+        -String password
+        +int MAX_RETRY$
+        
+        +Account(Long id, String username)
+        +authenticate(String inputPass) boolean
+        +calculateFee(double amount) double*
+    }
 
-class Wallet {
-    BigDecimal 
-}
-class Item {
-    <<Abstract>>
-    <<FactoryMethod>>
-    String itemId
-    String ownerAccountName
-    String name 
-    String description
-    String imageURL
-}
+    %% Định nghĩa Class kế thừa
+    class UserAccount {
+        -String email
+        -double balance
+        +calculateFee(double amount) double
+        +transfer(Account recipient, double amount) void
+    }
 
-class Electronics
-class Art 
-class Vehicle
-
-Item <|-- Electronics
-Item <|-- Art
-Item <|-- Vehicle
-class AuctionManager {
-    <<Singleton>>
-    Map<String,Auction> auctionMap
-}
-AuctionManager *-- Auction
-class Auction {
-    String auctionId
-    String title
-    String SellerId
-    String leadingBidderId
-    String itemId
-    List<BidTransaction> BidHistory
-    LocalDateTime startTime
-    LocalDateTime endTime
-    BigDecimal currentPrice
-    BigDecimal smallestIncrement
-    AuctionStatus auctionStatus
-}
-class AuctionStatus{
-    <<Enum>>
-    SCHEDULED
-    RUNNING
-    FINISHED
-    PAID
-    CANCELLED
-}
-class BidTransaction{
-    String auctionId 
-    String bidderId 
-    BigDecimal amount
-    LocalDateTime timestamp
-}
-Auction *-- BidTransaction
-class Notification {
-    <<interface>>    
-}
-
-Notification <.. User
-
-Auction "has status"--> AuctionStatus
+    %% Quan hệ giữa các class
+    Account <|-- UserAccount : extends
+    Repository <|.. UserAccount : implements
 ```
