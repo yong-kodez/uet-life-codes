@@ -14,8 +14,6 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: ./advanced_prog/week_09/Bai04
@@ -24,6 +22,8 @@ jobs:
       fail-fast: false 
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout repo
