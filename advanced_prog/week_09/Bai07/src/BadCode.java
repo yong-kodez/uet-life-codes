@@ -1,17 +1,12 @@
-import java.util.*;
-
+/** Bad code, đã sửa. */
 public class BadCode {
-  private int bad_variable_name = 10;
+  /** Add comment. */
+  public int calculate(int a, int b) {
+    int sum = a + b;
 
-  public int calculate(int a,int b){ 
-    int sum=a+b;
-
-    if(sum > 10) 
-    {
+    if (sum > 10) {
       return sum;
     }
-
-    System.out.println("Day la mot dong log rat dai duoc viet co y vuot qua gioi han do dai ky tu toi da");
 
     return 0;
   }

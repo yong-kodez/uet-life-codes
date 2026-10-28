@@ -34,8 +34,12 @@ jobs:
         run: mvn checkstyle:checkstyle
 
       - name: Checkstyle Review Bot
-        uses: dbelyaev/action-checkstyle@v0.8.0
+        uses: dbelyaev/action-checkstyle@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           checkstyle_file: 'target/checkstyle-result.xml'
+          workdir: ./advanced_prog/week_09/Bai07
+          reporter: github-pr-review
+          level: warning
           fail_on_error: true
+          fail_level: any
