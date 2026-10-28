@@ -1,5 +1,6 @@
 /** Bad code, đã sửa. */
 public class BadCode {
+  /** Add comment. */
   public int calculate(int a, int b) {
     int sum = a + b;
 
