@@ -38,4 +38,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           checkstyle_file: 'target/checkstyle-result.xml'
+          reporter: github-pr-review
+          level: warning
+          filter_mode: nofilter
           fail_on_error: true
