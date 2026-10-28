@@ -3,8 +3,8 @@ import java.util.*;
 public class BadCode {
   private int bad_variable_name = 10;
 
-  public int calculate(int a,int b){ 
-    int sum=a+b;
+  public int calculate(int a,int b) { 
+    int sum = a + b;
 
     if(sum > 10) 
     {
