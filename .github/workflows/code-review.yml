@@ -34,10 +34,8 @@ jobs:
         run: mvn checkstyle:checkstyle
 
       - name: Checkstyle Review Bot
-        uses: reviewdog/action-checkstyle@v0
+        uses: dbelyaev/action-checkstyle@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          checkstyle_config: 'google_checks.xml'
-          reporter: github-pr-review
-          level: warning
+          checkstyle_file: 'target/checkstyle-result.xml'
           fail_on_error: true
