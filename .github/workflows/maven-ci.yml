@@ -21,7 +21,7 @@ jobs:
         working-directory: ./advanced_prog/week_09/Bai03
 
     strategy:
-      fail-fast: false # Nếu 1 OS bị lỗi, các OS còn lại vẫn tiếp tục chạy để kiểm tra
+      fail-fast: false 
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
 
