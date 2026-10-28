@@ -15,6 +15,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./advanced_prog/week_09/Bai10
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
