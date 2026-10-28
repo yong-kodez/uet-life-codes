@@ -1,0 +1,4 @@
+2026-10-29 00:24:56 [main] INFO  Service - Start processing order01 with 200.0$
+2026-10-29 00:24:56 [main] INFO  Service - Success processing order01
+2026-10-29 00:24:56 [main] INFO  Service - Start processing order02 with -230.0$
+2026-10-29 00:24:56 [main] ERROR Service - Catch exception when processing order02 with -230.0$

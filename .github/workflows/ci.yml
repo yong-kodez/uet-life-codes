@@ -1,0 +1,26 @@
+name: Bai10_Java-CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'advanced_prog/week_09/Bai10/**'
+      - '.github/workflows/ci.yml'
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'advanced_prog/week_09/Bai10/**'
+      - '.github/workflows/ci.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn package
