@@ -1,0 +1,30 @@
+name: week09_Bai06_Cache
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'advanced_prog/week_09/Bai06/**'
+      - '.github/workflows/maven-cache.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./advanced_prog/week_09/Bai06
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 25
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: maven # Cache ở đây
+
+      - name: Build and verify
+        run: mvn clean verify
