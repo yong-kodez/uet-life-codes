@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
+
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -11,7 +12,7 @@ public class BookStore {
         stock = new HashMap<>();
     }
 
-    public void addBook(String title, int qty) {
+    public void restock(String title, int qty) {
         lock.writeLock().lock();
         try {
             System.out.println(" + Adding " + qty + " of: " + title);
@@ -34,8 +35,7 @@ public class BookStore {
     public void getStock(String title) {
         lock.readLock().lock();
         try {
-            // System.out.println("[#] Reading stock...");
-            System.out.println("\t\t\t\t\t\t\t" + title + ": " + stock.get(title) + " remains");
+            System.out.println("\t\t\t\t\t\t" + title + ": " + stock.get(title) + " remains");
         } finally { lock.readLock().unlock(); }
     }
 }

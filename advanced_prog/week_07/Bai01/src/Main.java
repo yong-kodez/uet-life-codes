@@ -12,5 +12,6 @@ public class Main {
         } catch (InterruptedException e) {
             System.out.println("[!] InterruptedException");
         }
+        System.out.println("All task done");
     }
 }

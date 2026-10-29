@@ -9,36 +9,28 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 public class ArrayService {
-    private List<int[]> tasks;
     private List<Future<Integer>> results;
 
     public ArrayService() {
-        this.tasks = new ArrayList<>();
         this.results = new ArrayList<>();        
     }
 
     public void assignTasks() {
+        ExecutorService es = Executors.newFixedThreadPool(5);
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
 
+        int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
             int len = sc.nextInt();
             int[] arr = new int[len];
             for (int j = 0; j < len; j++) {
                 arr[j] = sc.nextInt();
             }
-            tasks.add(arr);
+            results.add(es.submit(new Task(arr)));
         }
-        sc.close(); 
-    }
 
-    public void active() {
-        ExecutorService es = Executors.newFixedThreadPool(5);
-
-        for (int[] task : tasks) {
-            results.add(es.submit(new Task(task)));
-        }
         es.shutdown();
+        sc.close(); 
     }
 
     public void getResults() {
@@ -48,18 +40,19 @@ public class ArrayService {
             String fmt = " Array " + id + ": ";
             try {
                 Integer res = future.get();
-                sum += res;
-                fmt += res;
+                if (res != null) {
+                    sum += res;
+                    fmt += res;
+                } else {
+                    fmt += "Not found";
+                }
+                id++;
+                System.out.println(fmt);
                 
             } catch (InterruptedException e) {
                 System.err.println("Interrupted Exception");
             } catch (ExecutionException e) {
                 System.err.println("Execution Exception");
-            } catch (NullPointerException e) {
-                fmt += "Not found";
-            } finally {
-                id++;
-                System.out.println(fmt);
             }
         }
         System.out.println(" Sum = " + sum);

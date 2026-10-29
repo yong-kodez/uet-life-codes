@@ -8,8 +8,9 @@ public class Main {
         System.out.print("Numer of packages/tasks: ");
         service.assignTasks(sc.nextInt());
         service.active();
+
         service.printLog();
-        System.out.println(" -> Success packages: " + service.getSuccess());
+        System.out.println(" -> Success = " + service.getSuccess());
         
         sc.close();
     }

@@ -1,8 +1,6 @@
 import java.util.concurrent.Callable;
-// import java.util.List;
 
 public class Task implements Callable<Integer> {
-    // private List<Integer> arr;
     private int[] arr;
 
     public Task(int[] arr) {

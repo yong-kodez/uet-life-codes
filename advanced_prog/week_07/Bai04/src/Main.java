@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         BookStore store = new BookStore();
-        store.addBook("Apocalypse", 5);
-        store.addBook("Don Quixote", 7);
-        store.addBook("Harry Potter", 1);
+        store.restock("Apocalypse", 5);
+        store.restock("Don Quixote", 7);
+        store.restock("Harry Potter", 1);
 
         Thread adder = new Thread(new Restock(store));
         Thread borrower = new Thread(new Borrow(store));

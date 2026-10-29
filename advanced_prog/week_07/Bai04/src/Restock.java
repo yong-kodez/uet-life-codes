@@ -12,7 +12,7 @@ public class Restock implements Runnable {
         int id = 0;
         while (true) {
             id = i % 3;
-            store.addBook(books[id], 1);
+            store.restock(books[id], 1);
             i++;
             try { Thread.sleep(2500); }
             catch (InterruptedException e) {}
