@@ -31,7 +31,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Jacoco plugin -->
+            <!-- Checkstyle plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>

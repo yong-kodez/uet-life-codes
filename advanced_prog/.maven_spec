@@ -1,0 +1,9 @@
+<dependencies>
+org.junit.jupiter <> junit-jupiter <> 5.10.2
+ch.qos.logback <> logback-classic <> 1.4.11
+</dependencies>
+
+<plugins>
+org.apache.maven.plugins <> maven-checkstyle-plugin <> 3.3.1
+org.jacoco <> jacoco-maven-plugin <> 0.8.13
+</plugins>

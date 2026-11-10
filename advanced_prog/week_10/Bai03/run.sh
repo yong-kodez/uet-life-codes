@@ -3,4 +3,11 @@ SRC_DIR="$ROOT_DIR/src"
 BUILD_DIR="$ROOT_DIR/build"
 mkdir -p "$BUILD_DIR"
 javac -d "$BUILD_DIR" "$SRC_DIR"/*.java
-java -cp "$BUILD_DIR" Main
+
+if [[ "$1" == "client" ]]; then 
+  java -cp "$BUILD_DIR" ChatClient
+fi 
+
+if [[ "$1" == "server" ]]; then 
+  java -cp "$BUILD_DIR" ChatServer
+fi 
