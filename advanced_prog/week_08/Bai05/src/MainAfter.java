@@ -39,6 +39,7 @@ abstract class Order {
     public abstract double getDeliveryFee();
     public abstract String getLabel();
 }
+
 class StandardOrder extends Order {
     public StandardOrder(double weight, double distance) {
         super(weight, distance);
@@ -52,6 +53,7 @@ class StandardOrder extends Order {
        return "[THƯỜNG]";
    }
 }
+
 class ExpressOrder extends Order {
     public ExpressOrder(double weight, double distance) { super(weight, distance); }
     @Override
@@ -63,6 +65,7 @@ class ExpressOrder extends Order {
        return "[HỎA TỐC]";
    }
 }
+
 class FragileOrder extends Order {
     public FragileOrder(double weight, double distance) { super(weight, distance); }
     @Override
@@ -74,6 +77,7 @@ class FragileOrder extends Order {
        return "[HÀNG DỄ VỠ]";
    }
 }
+
 class BulkyOrder extends Order {
     public BulkyOrder(double weight, double distance) { super(weight, distance); }
     @Override

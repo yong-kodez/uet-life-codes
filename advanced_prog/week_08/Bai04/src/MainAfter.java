@@ -66,10 +66,10 @@ class Truck extends Vehicle {
     @Override 
     public double getFee(int hours) {
         double total = TRUCK_BASE_FEE + hours * TRUCK_HOURLY_RATE;
-        // if ((overtime = (hours - TRUCK_OVERTIME)) > 0)
-        // total += (hours - overtime) * BIKE_HOURLY_RATE;
         return total;
     }
+
+    @Override
     public int getBonus(int hours) {
         int bonus = super.getBonus(hours);
         if (hours > TRUCK_BONUS_THRESHOLD)

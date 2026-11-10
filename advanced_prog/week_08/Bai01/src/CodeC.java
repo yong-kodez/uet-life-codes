@@ -1,6 +1,7 @@
 // Code Smell:
 // - Switch Statements: Dùng nhiều lệnh if kiểm tra chuỗi shapeType để rẽ nhánh hành vi.
-// - Magic Number: Sử dụng số 3.14159 trực tiếp và tham số b dư thừa khi tính diện tích hình tròn
+// - Magic Number: Sử dụng số 3.14159 trực tiếp và tham số b dư thừa khi tính diện tích
+// hình tròn
 // 
 // Tại sao là vấn đề: Vi phạm nguyên lý Open/Closed Principle (OCP).
 // Mỗi khi muốn thêm một hình mới , ta lại phải mở hàm getArea ra sửa và thêm if.

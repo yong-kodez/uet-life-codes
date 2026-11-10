@@ -23,6 +23,7 @@ class Student {
     public String getName() { return name; }
     public double getGpa() { return gpa; }
 }
+
 class Course {
     private String courseId;
     private String courseName;
@@ -38,6 +39,7 @@ class Course {
     public String getCourseName() { return courseName; }
     public int getCredits() { return credits; }
 }
+
 class CourseScore {
     private double midtermScore;
     private double finalScore;
@@ -65,6 +67,7 @@ class CourseScore {
     public double getFinalScore() { return finalScore; }
     public double getAssignmentScore() { return assignmentScore; }
 }
+
 class StudentManager {
     private Student student;
     private Course course;
@@ -85,3 +88,5 @@ class StudentManager {
                           score.calculateFinalGrade(), score.getAcademicStatus());
     }
 }
+// Khi thêm lớp TeachingAssistant có thể thêm lớp Person chứa id và name
+// và để Student kế thừa Person rồi triển khai các lớp khác như trên

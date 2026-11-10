@@ -4,4 +4,4 @@
 # mkdir -p "$BUILD_DIR"
 # javac -d "$BUILD_DIR" "$SRC_DIR"/*.java
 # java -cp "$BUILD_DIR" Main
-mvn test
+mvn clean test

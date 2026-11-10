@@ -1,6 +1,7 @@
 // Code Smell: God Class - một class ôm quá nhiều việc
 // 
-// Tại sao là vấn đề: Khi cần thay đổi bất kỳ logic nào đều cần sửa class này, có thể dẫn đến lỗi các phần khác
+// Tại sao là vấn đề: Khi cần thay đổi bất kỳ logic nào đều cần sửa class này,
+// có thể dẫn đến lỗi các phần khác
 // 
 // Kỹ thuật Refactor: chia thành các lớp chuyên biệt
 class User {}
