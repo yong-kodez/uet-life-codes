@@ -41,7 +41,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
-                    <!-- Dùng bộ quy chuẩn Google Java Style sun_checks.xml -->
+                    <!-- Dùng bộ quy chuẩn Google Java Style -->
                     <configLocation>google_checks.xml</configLocation>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
