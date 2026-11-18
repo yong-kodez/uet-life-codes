@@ -1,0 +1,90 @@
+.root {
+    -orange: #b2653b;
+    -black: #181818;
+    -white: #f5eddc;
+    -green: #5c7f71;
+    -red: #802520;
+    -yellow: #ba8530;
+
+    -fx-background-color: -black;
+    -fx-font-family: "JetBrains Mono", "Arial", monospace;
+}
+
+.label {
+    -fx-text-fill: -orange;
+    -fx-font-weight: 600;
+}
+
+.status-label {
+    -fx-font-weight: 700;
+}
+
+/* Tiêu đề biểu mẫu */
+.form-title {
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -orange;
+    -fx-alignment: center;
+}
+
+/* Ô nhập liệu */
+.text-field, .text-area, .combo-box, .date-picker {
+    -fx-background-color: -white;
+    -fx-border-color: -white;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-font-size: 12px;
+}
+.gender-text {
+    -fx-font-size: 12px;
+}
+.radio-button {
+    -fx-text-fill: -orange;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: -orange;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.2), 4, 0, 0, 1);
+}
+
+.btn-primary {
+    -fx-background-color: -green;
+    -fx-text-fill: -white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 18px;
+    -fx-cursor: hand;
+}
+.btn-primary:hover {
+    -fx-background-color: -white;
+    -fx-text-fill: -green;
+}
+
+/* Nút bấm phụ */
+.btn-secondary {
+    -fx-background-color: -yellow;
+    -fx-text-fill: -white;
+    -fx-background-radius: 6px;
+    -fx-padding: 5px 16px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-size: 10px;
+}
+.btn-secondary:hover {
+    -fx-background-color: -white;
+    -fx-text-fill: -yellow;
+}
+
+.btn-third {
+    -fx-background-color: -red;
+    -fx-text-fill: -white;
+    -fx-background-radius: 6px;
+    -fx-padding: 5px 16px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-size: 10px;
+}
+.btn-third:hover {
+    -fx-background-color: -white;
+    -fx-text-fill: -red;
+}
